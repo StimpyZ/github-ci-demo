@@ -1,10 +1,12 @@
 const express = require('express');
 
 const holamundo = express()
-const suma = express()
 
-holamundo.get('/', (req, res) => res.send('This a test for CI/CD'))
-
-suma.get('/', (req, res) => res.send(6 + 6))
+holamundo.get('/', (req, res) => {
+    const a = 2400;
+    const b = 1200
+    const result = a + b
+    res.send(`El resultado de la suma ${a} + ${b} es: ${result}`)
+});
 
 module.exports = holamundo
